@@ -1,0 +1,224 @@
+/* Container principal com imagem de fundo */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #024b025b;
+    /* Adicionando a imagem de fundo */
+    background-image: url('../Imagens/FUNDOO.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay; /* Combina cor e imagem */
+    transition: background-color 0.5s ease-in-out;
+}
+
+/* Container do formulário com fundo semi-transparente */
+.login-form-container {
+    background-color: #024b02d0;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    /* Animação de entrada */
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+
+.login__header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+    /* Animação de entrada */
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.login__header img {
+    width: 200px;
+    /* Transição para hover e interações */
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.login__header img:hover {
+    transform: scale(1.05) rotate(2deg);
+    filter: brightness(1.1);
+}
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+.login__header h2 {
+  font-family: 'Cinzel Decorative', cursive;
+  font-size: 2.8rem;
+  font-weight: 700; /* Ou 900 para maior destaque */
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-shadow: 2px 2px 0 #ffffff, 
+               4px 4px 0 rgb(255, 255, 255),
+               6px 6px 0 rgba(0, 0, 0, 0.2);
+  background: linear-gradient(to bottom, #f9f9f9, #c9c9c9, #f9f9f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+  animation: titleEntrance 1.2s ease-out;
+  position: relative;
+  white-space: nowrap;
+}
+
+.login__field {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 50px;
+    color: #000000;
+    /* Animação de entrada com delay */
+    animation: slideInUp 0.6s ease-out 0.3s both;
+}
+
+/* Input fields dinâmicos */
+.login__input {
+    width: 250px;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #024b02;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+    font-size: 1em;
+}
+
+.login__input:focus {
+    transform: scale(1.02);
+    border-color: #037503;
+    box-shadow: 0 0 15px rgba(2, 75, 2, 0.3);
+    background-color: white;
+    outline: none;
+}
+
+.login__input:hover {
+    border-color: #037503;
+    background-color: white;
+}
+
+/* Botão com animações */
+.login__button {
+    width: 270px;
+    padding: 12px;
+    margin-top: 20px;
+    background: linear-gradient(135deg, #024b02, #037503);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.login__button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(2, 75, 2, 0.4);
+    background: linear-gradient(135deg, #037503, #028502);
+}
+
+.login__button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(2, 75, 2, 0.4);
+}
+
+.login__button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%);
+}
+
+.login__button:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Animações Keyframes */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #000;
+    }
+}
+
+/* Efeito de pulsação sutil no container */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(2, 75, 2, 0.2);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(2, 75, 2, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(2, 75, 2, 0);
+    }
+}
+
+.login-form {
+    animation: pulse 3s infinite;
+}
+
+/* Responsividade com transições */
+@media (max-width: 768px) {
+    .login-form {
+        transition: all 0.3s ease;
+        padding: 20px;
+    }
+    
+    .login__header img {
+        width: 150px;
+        transition: all 0.3s ease;
+    }
+}
